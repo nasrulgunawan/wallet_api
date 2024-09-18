@@ -1,0 +1,22 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source_wallet: one
+  target_wallet: two
+  amount: 100.00
+  transaction_type: credit
+  transaction_category: transfer
+
+two:
+  source_wallet: three
+  target_wallet: four
+  amount: 50.00
+  transaction_type: credit
+  transaction_category: deposit
+
+three:
+  source_wallet: five
+  target_wallet: six
+  amount: 75.50
+  transaction_type: debit
+  transaction_category: withdrawal

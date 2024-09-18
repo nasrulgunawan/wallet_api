@@ -4,6 +4,8 @@ module WalletTransactionsConcern
   included do
     has_many :credit_transactions, class_name: "Transaction", foreign_key: "target_wallet_id"
     has_many :debit_transactions, class_name: "Transaction", foreign_key: "source_wallet_id"
+
+    after_create :create_wallet
   end
 
   def balance
@@ -21,5 +23,11 @@ module WalletTransactionsConcern
 
   def credit_transactions
     all_transactions.where(transaction_type: :credit)
+  end
+
+  private
+
+  def create_wallet
+    self.create_wallet!
   end
 end
